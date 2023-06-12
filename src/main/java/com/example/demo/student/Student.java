@@ -1,17 +1,14 @@
 package com.example.demo.student;
 
-
 import java.time.LocalDate;
-
 
 public class Student {
 
-
-    private Long id;
-    private String name;
-    private String email;
-    private LocalDate dob; //date of birth
-    private  Integer age;
+    private Long id; // Unique identifier for the student
+    private String name; // Name of the student
+    private String email; // Email address of the student
+    private LocalDate dob; // Date of birth of the student
+    private Integer age; // Age of the student
 
     public Student() {
     }
@@ -24,7 +21,7 @@ public class Student {
         this.age = age;
     }
 
-    //because db generate id for as we make this constructor
+   
     public Student(String name, String email, LocalDate dob, Integer age) {
         this.name = name;
         this.email = email;
@@ -83,3 +80,4 @@ public class Student {
                 '}';
     }
 }
+
