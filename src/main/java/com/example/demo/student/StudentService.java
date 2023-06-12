@@ -1,4 +1,5 @@
 package com.example.demo.student;
+
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -9,16 +10,21 @@ import java.util.Random;
 @Service
 public class StudentService {
 
-    private static final int NUMBER_OF_STUDENTS = 10;
+    private static final int NUMBER_OF_STUDENTS = 10; // Total number of students to generate
     private static final List<String> NAMES = List.of(
-            "John", "Jane", "David", "Emma", "Michael", "Olivia", "William", "Sophia", "James", "Ava");
+            "John", "Jane", "David", "Emma", "Michael", "Olivia", "William", "Sophia", "James", "Ava"); // List of available names
     private static final List<String> EMAIL_DOMAINS = List.of(
-            "example.com", "test.com", "dummy.com", "sample.com", "school.edu");
-    private static final int MIN_AGE = 18;
-    private static final int MAX_AGE = 25;
+            "example.com", "test.com", "dummy.com", "sample.com", "school.edu"); // List of available email domains
+    private static final int MIN_AGE = 18; // Minimum age for students
+    private static final int MAX_AGE = 25; // Maximum age for students
 
     private Random random = new Random();
 
+    /**
+     * Get a list of randomly generated student objects.
+     *
+     * @return List of Student objects
+     */
     public List<Student> getStudents() {
         List<Student> students = new ArrayList<>();
         List<String> usedNames = new ArrayList<>();
@@ -36,6 +42,12 @@ public class StudentService {
         return students;
     }
 
+    /**
+     * Generate a random name that is not already used.
+     *
+     * @param usedNames List of already used names
+     * @return Random name
+     */
     private String generateRandomName(List<String> usedNames) {
         String name;
         do {
@@ -45,11 +57,22 @@ public class StudentService {
         return name;
     }
 
+    /**
+     * Generate a random email address based on the name.
+     *
+     * @param name Name of the student
+     * @return Random email address
+     */
     private String generateRandomEmail(String name) {
         String domain = EMAIL_DOMAINS.get(random.nextInt(EMAIL_DOMAINS.size()));
         return name.toLowerCase() + "@" + domain;
     }
 
+    /**
+     * Generate a random birth date.
+     *
+     * @return Random birth date
+     */
     private LocalDate generateRandomBirthDate() {
         int year = random.nextInt(30) + 1970; // Random year between 1970 and 1999
         int month = random.nextInt(12) + 1; // Random month between 1 and 12
@@ -57,7 +80,13 @@ public class StudentService {
         return LocalDate.of(year, month, day);
     }
 
+    /**
+     * Generate a random age within the specified range.
+     *
+     * @return Random age
+     */
     private int generateRandomAge() {
         return random.nextInt(MAX_AGE - MIN_AGE + 1) + MIN_AGE;
     }
 }
+
