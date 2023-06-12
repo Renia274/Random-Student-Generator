@@ -22,3 +22,24 @@ Follow these steps to get the application up and running on your local machine:
 
 ```shell
 git clone https://github.com/Renia274/Random-Student-Generator.git
+
+
+    Navigate to the project directory:
+
+shell
+
+cd Random-Student-Generator
+
+    Build the project using Maven:
+
+shell
+
+mvn clean install
+
+    Run the application:
+
+shell
+
+mvn spring-boot:run
+
+    The application will start, and you can access the API endpoint at http://localhost:8080/api/v1/student.
