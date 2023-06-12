@@ -20,26 +20,27 @@ Follow these steps to get the application up and running on your local machine:
 
 1. Clone the repository:
 
-```shell
-git clone https://github.com/Renia274/Random-Student-Generator.git
+       git clone https://github.com/Renia274/Random-Student-Generator.git
 
+2.Navigate to the project directory:
 
-    Navigate to the project directory:
+    cd Random-Student-Generator
 
-shell
+3.Build the project using Maven:
 
-cd Random-Student-Generator
+    mvn clean install
 
-    Build the project using Maven:
+4.Run the application:
 
-shell
+    mvn spring-boot:run
 
-mvn clean install
+    The application will start, and you can access the API endpoint at http://localhost:8080/api/v1/student
+## Configuration
 
-    Run the application:
+You can customize the behavior of the application by modifying the following constants in the StudentService class:
 
-shell
+    NUMBER_OF_STUDENTS: Specifies the total number of students to generate.
+    NAMES: Provides a list of available names to assign to the students.
+    EMAIL_DOMAINS: Provides a list of available email domains for generating email addresses.
+    MIN_AGE and MAX_AGE: Define the range of ages for the generated students.
 
-mvn spring-boot:run
-
-    The application will start, and you can access the API endpoint at http://localhost:8080/api/v1/student.
