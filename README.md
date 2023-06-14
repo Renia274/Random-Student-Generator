@@ -34,7 +34,7 @@ Follow these steps to get the application up and running on your local machine:
 
     mvn spring-boot:run
 
-    The application will start, and you can access the API endpoint at http://localhost:8080/api/v1/student
+   The application will start, and you can access the API endpoint at http://localhost:8080/api/v1/student
     
 ## Configuration
 
