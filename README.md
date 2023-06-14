@@ -13,6 +13,7 @@ This is a simple Java application that generates random student objects with uni
 
 - Java Development Kit (JDK) 11 or higher
 - Maven build tool
+- IntelliJ IDEA
 
 ## Getting Started
 
